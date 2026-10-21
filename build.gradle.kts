@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    application
 }
 
 group = "org.example"
@@ -17,4 +18,18 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
+    options.compilerArgs.add("-parameters")
+}
+
+application {
+    mainClass.set("org.example.GenerateExample")
+    applicationDefaultJvmArgs = listOf("-Dfile.encoding=UTF-8", "-Dstdout.encoding=UTF-8", "-Dstderr.encoding=UTF-8")
+}
+
+tasks.named<JavaExec>("run") {
+    jvmArgs("-Dfile.encoding=UTF-8", "-Dstdout.encoding=UTF-8", "-Dstderr.encoding=UTF-8")
 }

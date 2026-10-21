@@ -1,1 +1,1 @@
-rootProject.name = "reflection-template"
+rootProject.name = "itmo-reflection-lab2"
