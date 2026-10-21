@@ -1,6 +1,5 @@
 package org.example;
 
-
 import org.example.classes.Example;
 import org.example.generator.Generator;
 

@@ -5,7 +5,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
 public class Generator {
-
     public Object generateValueOfType(Class<?> clazz) throws InvocationTargetException, InstantiationException, IllegalAccessException {
         Constructor<?>[] constructors = clazz.getDeclaredConstructors();
 
@@ -13,6 +12,4 @@ public class Generator {
         Constructor<?> randomConstructor = constructors[randomConstructorIndex];
         return randomConstructor.newInstance(111);
     }
-
-
 }
